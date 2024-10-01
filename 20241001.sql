@@ -78,3 +78,15 @@ GROUP BY
 SELECT order_id, order_date
 FROM superstore_orders
 ORDER BY sales;
+
+
+SELECT
+	order_id,
+	sales,
+	CASE
+		WHEN sales > 100 THEN '>100'
+		WHEN sales > 50 THEN '50+ - 100'
+		WHEN sales > 10 THEN '10+ - 50'
+		ELSE '<=10'
+	END AS sales_group
+FROM superstore_orders;
