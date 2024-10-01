@@ -90,3 +90,27 @@ SELECT
 		ELSE '<=10'
 	END AS sales_group
 FROM superstore_orders;
+
+
+-- Weather Observation Station 11
+SELECT DISTINCT
+    CITY
+FROM
+    STATION
+WHERE
+    NOT (
+    (
+        CITY LIKE 'a%'
+        OR CITY LIKE 'e%'
+        OR CITY LIKE 'i%'
+        OR CITY LIKE 'o%'
+        OR CITY LIKE 'u%'
+    )
+    AND (
+        CITY LIKE '%a'
+        OR CITY LIKE '%e'
+        OR CITY LIKE '%i'
+        OR CITY LIKE '%o'
+        OR CITY LIKE '%u'
+    )
+)
