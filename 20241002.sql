@@ -74,3 +74,8 @@ SELECT name
 FROM Employee
 WHERE salary > 2000 AND months < 10
 ORDER BY employee_id ASC;
+
+-- Weather Observation Station 18
+SELECT
+ROUND((MAX(LAT_N) - MIN(LAT_N)) + (MAX(LONG_W) - MIN(LONG_W)), 4) AS m_dis
+FROM STATION;
