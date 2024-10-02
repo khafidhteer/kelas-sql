@@ -1,5 +1,4 @@
 --Weather Observation Station 12
--- Weather Observation Station 12
 SELECT DISTINCT
     CITY
 FROM
@@ -27,3 +26,12 @@ WHERE
         OR CITY LIKE '%o'
         OR CITY LIKE '%u'
     );
+
+-- Weather Observation Station 10
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY NOT LIKE '%a' 
+  AND CITY NOT LIKE '%e' 
+  AND CITY NOT LIKE '%i' 
+  AND CITY NOT LIKE '%o' 
+  AND CITY NOT LIKE '%u';
