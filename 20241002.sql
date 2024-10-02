@@ -49,3 +49,22 @@ WHERE POPULATION > 100000;
 SELECT COUNT(NAME) AS city_count
 FROM CITY
 WHERE POPULATION > 100000;
+
+-- Top Earners
+SELECT total_earnings, COUNT(*) 
+FROM (
+    SELECT salary * months AS total_earnings 
+    FROM Employee
+) AS earnings
+WHERE total_earnings = (
+    SELECT MAX(salary * months) 
+    FROM Employee
+)
+GROUP BY total_earnings
+;
+
+SELECT salary * months AS total_earnings, count(*) number_of_employee
+FROM Employee
+GROUP BY 1
+ORDER BY 1 DESC
+LIMIT 1;
