@@ -68,3 +68,9 @@ FROM Employee
 GROUP BY 1
 ORDER BY 1 DESC
 LIMIT 1;
+
+-- Employee Salaries
+SELECT name
+FROM Employee
+WHERE salary > 2000 AND months < 10
+ORDER BY employee_id ASC;
