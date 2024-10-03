@@ -23,3 +23,9 @@ INNER JOIN price_tomorrow AS ptm
 ON ptd.stock_code = ptm.stock_code
 WHERE ptm.price > ptd.price
 ORDER BY ptm.stock_code ASC
+
+-- Population Census    
+SELECT SUM(CITY.Population) AS Total_Population
+FROM CITY
+JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code
+WHERE COUNTRY.Continent = 'Asia';
