@@ -10,4 +10,17 @@ JOIN Hackers h
 ON h.hacker_id = s.hacker_id
 GROUP BY s.hacker_id, h.name
 HAVING count(*) > 1
-ORDER BY count(*) DESC, s.hacker_id
+ORDER BY count(*) DESC, s.hacker_id;
+
+SELECT s.hacker_id, h.name as hacker_name
+FROM Submissions as s
+JOIN Challenges as c
+ON s.challenge_id = c.challenge_id
+JOIN Difficulty as d
+ON d.difficulty_level = c.difficulty_level
+JOIN Hackers h
+ON h.hacker_id = s.hacker_id
+WHERE d.score = s.score
+GROUP BY s.hacker_id, h.name
+HAVING count(*) > 1
+ORDER BY count(*) DESC, s.hacker_id;
